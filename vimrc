@@ -11,7 +11,14 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'L9'
+Plugin 'FuzzyFinder'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+Plugin 'Trinity'
+Plugin 'srcexpl'
+Plugin 'TabBar'
+Plugin 'taglist.vim'
+Plugin 'The-NERD-tree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,9 +38,29 @@ filetype plugin indent on    " required
 
 syntax on 
 set nocompatible
-set nu 
 set hls
 set showmatch 
 set encoding=utf-8 
+set softtabstop=4
+set tabstop=4
+nmap m :set mouse=nv<CR>
+imap m :set mouse=<CR>
+
+"set mouse=a
+
+" Switch show line number
+nmap <F8> :set nu!<CR>
+imap <F8> :set nu!<CR>
 
 let g:acp_completeOption = '.,w,b,u,t,i,k'  "for autocomplpop
+
+
+"==============================================================="
+" Triniry + Source Explorer + TagList + NERD Tree"
+nmap <F9>  :TrinityToggleAll<CR>
+nmap <F10>  :TrinityToggleSourceExplorer<CR>
+nmap <F11>  :TrinityToggleTagList<CR>
+nmap <F12>  :TrinityToggleNERDTree<CR>
+
+
+
