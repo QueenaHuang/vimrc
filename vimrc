@@ -37,14 +37,17 @@ filetype plugin indent on    " required
 
 
 syntax on 
+"backspace enable
 set nocompatible
+set backspace=2
+
 set hls
 set showmatch 
 set encoding=utf-8 
 set softtabstop=4
 set tabstop=4
 nmap m :set mouse=nv<CR>
-imap m :set mouse=<CR>
+nmap b :set mouse=<CR>
 
 "set mouse=a
 
@@ -62,5 +65,25 @@ nmap <F10>  :TrinityToggleSourceExplorer<CR>
 nmap <F11>  :TrinityToggleTagList<CR>
 nmap <F12>  :TrinityToggleNERDTree<CR>
 
+let Tlist_Show_One_File = 1 " Displaying tags for only one file~
+let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill yourself
+let Tlist_Use_Right_Window = 0 " split to the right side of the screen
+let Tlist_Sort_Type = "order" " sort by order or name
+let Tlist_Display_Prototype = 0 " do not show prototypes and not tags in the taglist window.
+let Tlist_Compart_Format = 1 " Remove extra information and blank lines from the taglist window.
+let Tlist_GainFocus_On_ToggleOpen = 0 " Jump to taglist window on open.
+let Tlist_Display_Tag_Scope = 1 " Show tag scope next to the tag name.
+let Tlist_Close_On_Select = 0 " Close the taglist window when a file or tag is selected.
+let Tlist_Enable_Fold_Column = 0 " Don't Show the fold indicator column in the taglist window.
+let Tlist_WinWidth = 40
 
+"===========tabbar========================"
+":bd: close tab windows"
+let g:Tb_MaxSize = 2
+let g:Tb_TabWrap = 1
+
+
+set ls=2
+set statusline=%<%f\ %m%=\ %h%r\ %-19([%p%%]\ %3l,%02c%03V%)%y
+highlight StatusLine term=bold,reverse cterm=bold,reverse
 
